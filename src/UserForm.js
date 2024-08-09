@@ -14,8 +14,10 @@ function UserForm({ onUserAdd }) {
   return (
     <form onSubmit={handleSubmit}>
       <div>
-        <label>Name</label>
+        <label htmlFor="name">Name</label>
         <input
+          data-testid="name"
+          id="name"
           value={name}
           onChange={(e) => {
             setName(e.target.value);
@@ -23,8 +25,13 @@ function UserForm({ onUserAdd }) {
         />
       </div>
       <div>
-        <label>Email</label>
-        <input value={email} onChange={(e) => setEmail(e.target.value)} />
+        <label htmlFor="email">Enter Email</label>
+        <input
+          data-testid="email"
+          id="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
       </div>
       <button>Add User</button>
     </form>

@@ -23,7 +23,11 @@ test("it may not be the best way to test onUserAdd function", () => {
   render(<UserForm onUserAdd={mockFunction} />);
 
   // 3. find two inputs
-  const [nameInput, emailInput] = screen.getAllByRole("textbox");
+  //   const [nameInput, emailInput] = screen.getAllByRole("textbox");
+  //   const nameInput = screen.getByRole("textbox", { name: /name/i });
+  //   const emailInput = screen.getByRole("textbox", { email: /enter email/i });
+  const nameInput = screen.getByTestId("name");
+  const emailInput = screen.getByTestId("email");
 
   // 4. simulate typing in a name and email
   user.click(nameInput);
